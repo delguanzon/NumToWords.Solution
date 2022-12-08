@@ -37,6 +37,14 @@ namespace NumToWords.Models
       {
         word = _singleWords[Number/100] + " hundred " + _doubleWords[(Number % 100) / 10] + " " + ((Number % 10 == 0) ? "" : _singleWords[Number%10]);
       }
+      else if (Number < 100000)
+      {
+        word = _singleWords[Number/1000] + " thousand " + _singleWords[(Number % 1000) / 100] + " hundred " + _doubleWords[(Number % 100) / 10] + " " + ((Number % 10 == 0) ? "" : _singleWords[Number%10]);
+      }
+      else
+      {
+        return "oops";
+      }
       return word.ToLower();
     }
   }

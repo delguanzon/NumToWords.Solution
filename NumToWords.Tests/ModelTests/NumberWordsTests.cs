@@ -14,38 +14,51 @@ namespace NumToWords.Tests
     }
 
     [TestMethod]
-    public void NumberWordsConstructor_GetUserInputAndAssignToField_Int() {
+    public void NumberWordsConstructor_GetUserInputAndAssignToField_Int()
+    {
       int userInput = 123;
       NumberWords numToWords = new NumberWords(userInput);
       Assert.AreEqual(userInput, numToWords.Number);
     }
 
     [TestMethod]
-    public void ToWord_ReturnNumberWordEquivalentForSingleDigits_String() {
+    public void ToWord_ReturnNumberWordEquivalentForSingleDigits_String()
+    {
       int userInput = 3;
       NumberWords number = new NumberWords(userInput);
       Assert.AreEqual("three", number.ToWord());
     }
 
     [TestMethod]
-    public void ToWord_ReturnNumberWordEquivalentForDigitsStartingFromTenToNineteen_String() {
+    public void ToWord_ReturnNumberWordEquivalentForDigitsStartingFromTenToNineteen_String()
+    {
       int userInput = 19;
       NumberWords number = new NumberWords(userInput);
       Assert.AreEqual("nineteen", number.ToWord());
     }
 
     [TestMethod]
-    public void ToWord_ReturnNumberWordEquivalentForDoubleDigitsGreaterThanNineteen_String() {
+    public void ToWord_ReturnNumberWordEquivalentForDoubleDigitsGreaterThanNineteen_String()
+    {
       int userInput = 21;
       NumberWords number = new NumberWords(userInput);
       Assert.AreEqual("twenty one", number.ToWord());
     }
 
     [TestMethod]
-    public void ToWord_ReturnNumberWordEquivalentForTripleDigits_String() {
+    public void ToWord_ReturnNumberWordEquivalentForTripleDigits_String()
+    {
       int userInput = 123;
       NumberWords number = new NumberWords(userInput);
       Assert.AreEqual("one hundred twenty three", number.ToWord());
+    }
+
+    [TestMethod]
+    public void ToWord_ReturnNumberWordEquivalentForFourDigits_String()
+    {
+      int userInput = 7263;
+      NumberWords number = new NumberWords(userInput);
+      Assert.AreEqual("seven thousand two hundred sixty three", number.ToWord());
     }
   }
 }
