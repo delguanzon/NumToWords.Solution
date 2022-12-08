@@ -1,16 +1,23 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NumToWords;
+using NumToWords.Models;
 
 namespace NumToWords.Tests
 {
   [TestClass]
-  public class ClassNameTests
+  public class NumberWordsTests
   {
     [TestMethod]
-    public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
+    public void NumberWordsConstructor_CreateInstanceOfNumberWords_NumberWords()
     {
-      // any necessary logic to prep for test; instantiating new classes, etc.
-      Assert.AreEqual(true, 1==1);
+      NumberWords numToWords = new NumberWords(123);
+      Assert.AreEqual(typeof(NumberWords), numToWords.GetType());
+    }
+
+    [TestMethod]
+    public void NumberWordsConstructor_GetUserInputAndAssignToField_Int() {
+      int userInput = 123;
+      NumberWords numToWords = new NumberWords(userInput);
+      Assert.AreEqual(userInput, numToWords.Number);
     }
 
   }

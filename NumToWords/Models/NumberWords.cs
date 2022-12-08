@@ -2,6 +2,11 @@ namespace NumToWords.Models
 {
   public class NumberWords
   {
-    // properties, constructors, methods, etc. go here
+
+    public int Number { get; }
+    public NumberWords(int userInput) {
+      Number = userInput;
+    }
+
   }
 }
