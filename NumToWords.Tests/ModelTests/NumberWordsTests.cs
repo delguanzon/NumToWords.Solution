@@ -41,6 +41,11 @@ namespace NumToWords.Tests
       Assert.AreEqual("twenty one", number.ToWord());
     }
 
-    
+    [TestMethod]
+    public void ToWord_ReturnNumberWordEquivalentForTripleDigits_String() {
+      int userInput = 123;
+      NumberWords number = new NumberWords(userInput);
+      Assert.AreEqual("one hundred twenty three", number.ToWord());
+    }
   }
 }

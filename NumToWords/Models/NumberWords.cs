@@ -29,8 +29,13 @@ namespace NumToWords.Models
       if(Number < 20) {
         word = _singleWords[Number];
       }
-      else {
+      else if (Number > 20 && Number < 99)
+      {
         word = _doubleWords[Number/10] + " " + ((Number % 10 == 0) ? "" : _singleWords[Number%10]);
+      }
+      else if (Number < 1000)
+      {
+        word = _singleWords[Number/100] + " hundred " + _doubleWords[(Number % 100) / 10] + " " + ((Number % 10 == 0) ? "" : _singleWords[Number%10]);
       }
       return word.ToLower();
     }
